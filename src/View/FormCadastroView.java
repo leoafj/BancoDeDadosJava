@@ -108,7 +108,7 @@ public class FormCadastroView extends javax.swing.JFrame {
             usuarioDao.insert(usuarioXandi);
             
         } catch (SQLException ex) {
-            
+            ddd
             Logger.getLogger(FormCadastroView.class.getName()).log(Level.SEVERE, null, ex);
         }
         
