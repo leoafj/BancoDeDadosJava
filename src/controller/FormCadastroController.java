@@ -28,8 +28,8 @@ public class FormCadastroController {
     
     public void salvaUsuario() {
         
-        String usuario = jTextFieldUsuario.getText();
-        String senha = jPasswordFieldSenha.getText();
+        String usuario = view.getjTextFieldUsuario().getText();
+        String senha = view.getjPasswordFieldSenha().getText();
         
         Usuario usuarioXandi = new Usuario(usuario, senha);
         

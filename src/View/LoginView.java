@@ -4,17 +4,24 @@
  */
 package View;
 
+import controller.LoginController;
+import javax.swing.JPasswordField;
+import javax.swing.JTextField;
+
 /**
  *
  * @author leonardoa
  */
 public class LoginView extends javax.swing.JFrame {
 
+    private final LoginController controller;
+
     /**
      * Creates new form LoginView
      */
     public LoginView() {
         initComponents();
+        controller = new LoginController(this);
     }
 
     /**
@@ -26,19 +33,17 @@ public class LoginView extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jTextField1 = new javax.swing.JTextField();
+        jTextFieldUsuario = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jPasswordField1 = new javax.swing.JPasswordField();
+        jPasswordFieldSenha = new javax.swing.JPasswordField();
         jToggleButton1 = new javax.swing.JToggleButton();
         jToggleButton2 = new javax.swing.JToggleButton();
         jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jTextField1.setBackground(new java.awt.Color(255, 255, 255));
-        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 190, 140, -1));
+        getContentPane().add(jTextFieldUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 190, 140, -1));
 
         jLabel1.setBackground(new java.awt.Color(255, 255, 255));
         jLabel1.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
@@ -51,9 +56,7 @@ public class LoginView extends javax.swing.JFrame {
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Senha");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 220, -1, -1));
-
-        jPasswordField1.setBackground(new java.awt.Color(255, 255, 255));
-        getContentPane().add(jPasswordField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 240, 140, -1));
+        getContentPane().add(jPasswordFieldSenha, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 240, 140, -1));
 
         jToggleButton1.setBackground(new java.awt.Color(255, 255, 255));
         jToggleButton1.setForeground(new java.awt.Color(51, 51, 51));
@@ -82,13 +85,13 @@ public class LoginView extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jToggleButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton2ActionPerformed
-        MenuView telaDeMenu = new MenuView();
-        telaDeMenu.setVisible(true);
+                FormCadastroView telaDeCadastro = new FormCadastroView();
+        telaDeCadastro.setVisible(true);
     }//GEN-LAST:event_jToggleButton2ActionPerformed
 
     private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
-        FormCadastroView telaDeCadastro = new FormCadastroView();
-        telaDeCadastro.setVisible(true);
+        
+        controller.autenticar();
     }//GEN-LAST:event_jToggleButton1ActionPerformed
 
     /**
@@ -126,12 +129,30 @@ public class LoginView extends javax.swing.JFrame {
         });
     }
 
+    public JPasswordField getjPasswordFieldSenha() {
+        return jPasswordFieldSenha;
+    }
+
+    public void setjPasswordFieldSenha(JPasswordField jPasswordFieldSenha) {
+        this.jPasswordFieldSenha = jPasswordFieldSenha;
+    }
+
+    public JTextField getjTextFieldUsuario() {
+        return jTextFieldUsuario;
+    }
+
+    public void setjTextFieldUsuario(JTextField jTextFieldUsuario) {
+        this.jTextFieldUsuario = jTextFieldUsuario;
+    }
+    
+    
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JPasswordField jPasswordField1;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JPasswordField jPasswordFieldSenha;
+    private javax.swing.JTextField jTextFieldUsuario;
     private javax.swing.JToggleButton jToggleButton1;
     private javax.swing.JToggleButton jToggleButton2;
     // End of variables declaration//GEN-END:variables
