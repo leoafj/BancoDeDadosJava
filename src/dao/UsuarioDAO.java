@@ -25,7 +25,7 @@ public class UsuarioDAO {
         this.connection = connection;
     }
     
-    public void insert (Usuario usuario) throws SQLException{
+    public Usuario insert (Usuario usuario) throws SQLException{
         
         String sql = "insert into usuario (usuario, senha) values (?, ?); ";
             
@@ -34,6 +34,14 @@ public class UsuarioDAO {
             statement.setString(2, usuario.getSenha());
             statement.execute();
          
+            ResultSet resultSet = statement.getGeneratedKeys();
+            
+            if(resultSet.next()){
+                int id = resultSet.getInt("id");
+                usuario.setId(id);
+            }
+            
+            return usuario;
         }
     
     public void update(Usuario usuario) throws SQLException{
